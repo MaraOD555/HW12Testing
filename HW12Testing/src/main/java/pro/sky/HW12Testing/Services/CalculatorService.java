@@ -16,9 +16,10 @@ public class CalculatorService { // методы класса делают то�
     public int multiply(int num1, int num2){
         return num1 * num2;
     }
-    public Number divide(int num1, int num2){ // Метод класса Number, чтобы можно было вернуть результат
-        // деления в числовом типе double, т.к. при делении образуется
-        // не целочисленное значение.
+    public Number divide(int num1, int num2){
+        if (num2 == 0) {
+            throw new IllegalArgumentException ("Ошибка!!! Делить на 0 запрещено");
+        }
         return (double) num1 / num2;
     }
 }
